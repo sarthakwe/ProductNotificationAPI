@@ -8,9 +8,11 @@ var connection = mysql.createConnection({
   port: '3306'
 });
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log('connected!');
+connection.connect(err=>{
+  if(err){
+    console.log(err, 'dberr');
+  }
+  console.log('database connected...');
 });
 
 module.exports = connection;
